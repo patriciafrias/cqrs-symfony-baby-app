@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Infrastructure\Persistence\Doctrine\Custom;
+namespace App\Infrastructure\Persistence\Doctrine;
 
 use App\Domain\Height;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
@@ -11,15 +11,9 @@ class DoctrineHeight extends FloatType
 {
     public function getName(): string
     {
-        return 'DoctrineHeight';
+        return 'Height';
     }
 
-    /**
-     * @param Height $value
-     * @param AbstractPlatform $platform
-     *
-     * @return float
-     */
     public function convertToDatabaseValue($value, AbstractPlatform $platform): float
     {
         return $value->height();

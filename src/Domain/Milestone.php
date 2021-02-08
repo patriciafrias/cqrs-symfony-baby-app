@@ -8,6 +8,11 @@ use DateTime;
 class Milestone
 {
     /**
+     * @var Id
+     */
+    private $id;
+
+    /**
      * @var Height
      */
     private $height;
@@ -19,28 +24,23 @@ class Milestone
 
     public function __construct(Height $height, DateTime $date)
     {
+        $this->id = Id::create();
         $this->height = $height;
         $this->date = $date;
     }
 
-    /**
-     * @return Height
-     */
+    public function getId(): Id
+    {
+        return $this->id;
+    }
+
     public function getHeight(): Height
     {
         return $this->height;
     }
 
-    /**
-     * @return DateTime
-     */
     public function getDate(): DateTime
     {
         return $this->date;
-    }
-
-    public function __toString()
-    {
-        return $this->height . ': ' . $this->date->format('mdY');
     }
 }
