@@ -17,10 +17,6 @@ services:
     image: mysql:8.0
     environment:
       BIND_ADDRESS: 0.0.0.0
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     networks:
       docker_network:
         aliases:
@@ -54,10 +50,6 @@ services:
       APACHE_RUN_DIR: /var/run/apache2
       APACHE_LOCK_DIR: /var/lock/apache2
       APACHE_LOG_DIR: /var/log/apache2
-      APP_DOMAIN: ${APP_DOMAIN}
-      APP_DOC_ROOT: ${APP_DOC_ROOT}
-      APACHE_SERVERNAME: ${APACHE_SERVERNAME}
-      FPM_ALIAS: ${FPM_ALIAS}
     ports:
       - 80:80
       - 443:443
