@@ -18,11 +18,10 @@ class Height
         $this->value = $value;
     }
 
-    /** @todo add create static method - continue with the infrastructure doctrine type */
-//    public static function create(int $order): self
-//    {
-//        return new static($order);
-//    }
+    public static function create(int $value): self
+    {
+        return new static($value);
+    }
 
     public function __toString(): string
     {
