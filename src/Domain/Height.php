@@ -18,7 +18,12 @@ class Height
         $this->value = $value;
     }
 
-    public static function create(int $value): self
+    public function height(): float
+    {
+        return $this->value;
+    }
+
+    public static function create(float $value): self
     {
         return new static($value);
     }
