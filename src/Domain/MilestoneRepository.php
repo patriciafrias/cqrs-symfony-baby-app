@@ -5,7 +5,7 @@ namespace App\Domain;
 
 interface MilestoneRepository
 {
-    public function save(Milestone $milestone);
+    public function persist(Milestone $milestone);
 
-    public function delete(Milestone $milestone);
+    public function remove(Milestone $milestone);
 }
