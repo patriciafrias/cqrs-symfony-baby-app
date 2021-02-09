@@ -19,7 +19,7 @@ class MilestoneType extends AbstractType
             ->add('height', NumberType::class, [
                 'required' => true,
             ])
-            ->add('moment', DateTimeType::HTML5_FORMAT, [
+            ->add('moment', DateTimeType::class, [
                 'required' => true,
                 ]
             )
