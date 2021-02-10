@@ -7,20 +7,11 @@ use DateTime;
 
 class Milestone
 {
-    /**
-     * @var Id
-     */
-    private $id;
+    private Id $id;
 
-    /**
-     * @var Height
-     */
-    private $height;
+    private Height $height;
 
-    /**
-     * @var DateTime
-     */
-    private $date;
+    private DateTime $date;
 
     public function __construct(Height $height, DateTime $date)
     {

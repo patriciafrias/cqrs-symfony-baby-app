@@ -11,29 +11,23 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
-    /**
-     * @param Request $request
-     * @return Response
-     *
-     * @Route("/")
-     */
     public function new(Request $request): Response
     {
-        $form = $this->createForm(MilestoneType::class);
-
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $milestone = $form->getData();
-
-             $entityManager = $this->getDoctrine()->getManager();
-             $entityManager->persist($milestone);
-             $entityManager->flush();
-
-//            return $this->redirectToRoute('success');
-        }
-
-        return $this->render('milestone/new.html.twig', [
-            'form' => $form->createView(),
-        ]);
+//        $form = $this->createForm(MilestoneType::class);
+//
+//        $form->handleRequest($request);
+//        if ($form->isSubmitted() && $form->isValid()) {
+//            $milestone = $form->getData();
+//
+//             $entityManager = $this->getDoctrine()->getManager();
+//             $entityManager->persist($milestone);
+//             $entityManager->flush();
+//
+////            return $this->redirectToRoute('success');
+//        }
+//
+//        return $this->render('milestone/new.html.twig', [
+//            'form' => $form->createView(),
+//        ]);
     }
 }
