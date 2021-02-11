@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Application\MilestoneListing;
+use App\Application\ListingMilestones;
 use App\Form\MilestoneType;
 use App\Infrastructure\Persistence\MilestoneRepositoryInMemory;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -20,7 +20,7 @@ class HomeController extends AbstractController
      */
     public function __invoke(Request $request): array
     {
-        $milestoneListService = new MilestoneListing();
+        $milestoneListService = new ListingMilestones();
 
         return [
             'message' => '',

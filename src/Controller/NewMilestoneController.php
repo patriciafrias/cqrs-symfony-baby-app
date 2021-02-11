@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Application\SaveNewMilestone;
 use App\Form\MilestoneType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -18,6 +19,12 @@ class NewMilestoneController extends AbstractController
      */
     public function __invoke(Request $request): array
     {
+        $saveNewMilestoneService = new SaveNewMilestone();
+
+        $saveNewMilestoneService->saveMilestone([
+            'height' => $request->get('height')
+        ]);
+
         return [
             'message' => 'New Milestone Added!'
         ];

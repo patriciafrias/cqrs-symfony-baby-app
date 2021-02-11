@@ -19,7 +19,7 @@ class HomepageTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
         $content = $client->getResponse()->getContent();
-        $this->assertStringContainsString('<li>51cm</li>', $content);
-        $this->assertStringContainsString('<li>53cm</li>', $content);
+        $this->assertStringContainsString('51cm', $content);
+        $this->assertStringContainsString('53cm', $content);
     }
 }

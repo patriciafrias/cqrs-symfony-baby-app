@@ -11,8 +11,6 @@ use PHPUnit\Framework\TestCase;
 
 class MilestoneListingTest extends TestCase
 {
-    private ?MilestoneRepositoryInterface $milestoneRepository;
-
     /**
      * @test
      */

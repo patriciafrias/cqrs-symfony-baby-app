@@ -7,7 +7,7 @@ use App\Domain\Height;
 use App\Domain\Milestone;
 use App\Infrastructure\Persistence\MilestoneRepositoryInMemory;
 
-class MilestoneListing
+class ListingMilestones
 {
     /**
      * @return Milestone[]|null

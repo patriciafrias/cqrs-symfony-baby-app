@@ -9,7 +9,7 @@ use App\Domain\MilestoneRepositoryInterface;
 
 class MilestoneRepositoryInMemory implements MilestoneRepositoryInterface
 {
-    private array $milestones = [];
+    private array $milestones;
 
     public function __construct(array $milestones)
     {

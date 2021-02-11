@@ -10,10 +10,7 @@ use Doctrine\ORM\EntityManager;
 
 final class MilestoneRepositoryMySql implements MilestoneRepositoryInterface
 {
-    /**
-     * @var EntityManager
-     */
-    private $entityManager;
+    private EntityManager $entityManager;
 
     public function __construct(EntityManager $entityManager)
     {
