@@ -4,10 +4,13 @@
 
     Hello Luca!
 
-    <ul>
-        <li>51cm</li>
-        <li>53cm</li>
-    </ul>
+    {% if milestones is not empty %}
+        <ul>
+            {% for milestone in milestones %}
+                <li>{{ milestone.date|date('d-m-Y H:i:s') }} - {{ milestone.height.height }}cm</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 
     {{ message }}
 
