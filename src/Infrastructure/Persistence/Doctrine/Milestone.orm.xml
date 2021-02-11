@@ -6,6 +6,6 @@
     <entity name="App\Domain\Milestone" table="milestones">
         <id name="id" column="id" type="Id" />
         <field name="height" column="height" type="Height" />
-        <field name="date" column="date" type="datetime" />
+        <field name="date" column="date" type="datetime_immutable" />
     </entity>
 </doctrine-mapping>

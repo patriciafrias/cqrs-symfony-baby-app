@@ -14,14 +14,29 @@ class MilestoneSaveNewTest extends TestCase
     /**
      * @test
      */
-    public function milestoneList_returnsAllMilestones()
+    public function milestoneSaveNew_shouldSaveIt()
     {
         $milestoneRepository = new MilestoneRepositoryInMemory([]);
 
-        $newMilestone = new Milestone(Height::create(55), new \DateTime('now'));
+        $newMilestone = new Milestone(Height::create(55));
 
         $milestoneRepository->persist($newMilestone);
 
         $this->assertCount(1, $milestoneRepository->findAll());
+    }
+
+    /**
+     * @test
+     * @todo move to value object - only Height
+     */
+    public function milestoneSaveNew_withWrongInput_shouldThrowAnException()
+    {
+        $this->expectException(\InvalidArgumentException::class);
+
+        $this->expectExceptionMessage('Enter a valid baby height');
+
+        $milestoneRepository = new MilestoneRepositoryInMemory([]);
+
+        $milestoneRepository->persist(new Milestone(Height::create(-1)));
     }
 }

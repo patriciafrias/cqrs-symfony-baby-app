@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Domain;
 
-use DateTime;
+use DateTimeImmutable;
 
 class Milestone
 {
@@ -11,13 +11,13 @@ class Milestone
 
     private Height $height;
 
-    private DateTime $date;
+    private DateTimeImmutable $date;
 
-    public function __construct(Height $height, DateTime $date)
+    public function __construct(Height $height)
     {
         $this->id = Id::create();
         $this->height = $height;
-        $this->date = $date;
+        $this->date = new DateTimeImmutable('now');
     }
 
     public function getId(): Id
@@ -30,7 +30,7 @@ class Milestone
         return $this->height;
     }
 
-    public function getDate(): DateTime
+    public function getDate(): DateTimeImmutable
     {
         return $this->date;
     }

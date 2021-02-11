@@ -21,8 +21,7 @@ class SaveNewMilestone
         $milestoneRepository = new MilestoneRepositoryInMemory([]);
 
         $milestone = new Milestone(
-            Height::create((float)$data['height']),
-            new \DateTime('now')
+            Height::create((float)$data['height'])
         );
 
         $milestoneRepository->persist($milestone);

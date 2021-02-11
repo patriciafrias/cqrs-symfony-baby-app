@@ -14,9 +14,14 @@
 
     {{ message }}
 
-    <form method="post" action="/new-milestone">
-        <input type="text" name="height">
-        <input type="submit" value="submit">
-    </form>
+{#    separate in two parts - including another controller with the form and redirecting to homepage #}
+
+    {{ form(milestoneForm) }}
+
+
+    {#    <form method="post" action="/new-milestone">#}
+{#        <input type="text" name="height">#}
+{#        <input type="submit" value="submit">#}
+{#    </form>#}
 
 {% endblock %}

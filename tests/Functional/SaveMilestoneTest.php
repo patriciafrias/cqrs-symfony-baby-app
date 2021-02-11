@@ -18,9 +18,9 @@ class SaveMilestoneTest extends WebTestCase
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
-        $form = $crawler->selectButton('submit')->form();
+        $form = $crawler->selectButton('Save')->form();
 
-        $form['height'] = '60';
+        $form['milestone[height]'] = '60';
 
         $client->submit($form);
 

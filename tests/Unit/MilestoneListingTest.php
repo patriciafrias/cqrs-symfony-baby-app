@@ -17,12 +17,22 @@ class MilestoneListingTest extends TestCase
     public function milestoneList_returnsAllMilestones()
     {
         $milestoneRepository = new MilestoneRepositoryInMemory([
-            new Milestone(Height::create(51), new \DateTime('now')),
-            new Milestone(Height::create(52), new \DateTime('now')),
+            new Milestone(Height::create(51)),
+            new Milestone(Height::create(52)),
         ]);
 
         $milestoneList = $milestoneRepository->findAll();
 
         $this->assertCount(2, $milestoneList);
+    }
+
+    /**
+     * @test
+     */
+    public function milestoneList_returnsEmptyArray()
+    {
+        $milestoneRepository = new MilestoneRepositoryInMemory([]);
+
+        $this->assertEmpty($milestoneRepository->findAll());
     }
 }

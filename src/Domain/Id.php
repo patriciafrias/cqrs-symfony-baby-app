@@ -8,8 +8,7 @@ use Ramsey\Uuid\Uuid;
 
 class Id
 {
-    /** @var string */
-    protected $id;
+    protected string $id;
 
     protected function __construct(string $id = null)
     {

@@ -16,12 +16,10 @@ class ListingMilestones
     {
         $milestoneRepository = new MilestoneRepositoryInMemory([
             new Milestone(
-                Height::create(51),
-                new \DateTime('now')
+                Height::create(51)
             ),
             new Milestone(
-                Height::create(53),
-                new \DateTime('now')
+                Height::create(53)
             )
         ]);
 

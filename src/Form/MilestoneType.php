@@ -19,18 +19,7 @@ class MilestoneType extends AbstractType
             ->add('height', NumberType::class, [
                 'required' => true,
             ])
-            ->add('moment', DateTimeType::class, [
-                'required' => true,
-                ]
-            )
             ->add('save', SubmitType::class
             );
-    }
-
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults([
-            'data_class' => Milestone::class,
-        ]);
     }
 }
