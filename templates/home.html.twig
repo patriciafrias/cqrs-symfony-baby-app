@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    Hello Luca!
+
+    <ul>
+        <li>51cm</li>
+        <li>53cm</li>
+    </ul>
+
+    {{ message }}
+
+    <form method="post" action="/new-milestone">
+        <input type="text" name="height">
+        <input type="submit" value="submit">
+    </form>
+
+{% endblock %}

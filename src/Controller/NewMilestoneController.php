@@ -10,16 +10,16 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController extends AbstractController
+class NewMilestoneController extends AbstractController
 {
     /**
-     * @Route("/", methods={"GET", "POST"}, name="home")
+     * @Route("/new-milestone", methods={"GET", "POST"}, name="new-milestone")
      * @Template("home.html.twig")
      */
     public function __invoke(Request $request): array
     {
         return [
-            'message' => ''
+            'message' => 'New Milestone Added!'
         ];
     }
 }
