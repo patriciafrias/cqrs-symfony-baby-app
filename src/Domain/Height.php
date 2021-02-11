@@ -3,14 +3,14 @@ declare(strict_types=1);
 
 namespace App\Domain;
 
-class Height
+final class Height
 {
     private float $value;
 
-    public function __construct(float $value)
+    protected function __construct(float $value)
     {
-        if ($value < 50 || $value > 100) {
-            return new \InvalidArgumentException('Enter a valid baby height in cm');
+        if (($value < 50) || ($value > 100)) {
+            throw new \InvalidArgumentException('Enter a valid baby height in cm');
         }
 
         $this->value = $value;
