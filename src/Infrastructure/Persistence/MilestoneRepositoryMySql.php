@@ -42,7 +42,7 @@ final class MilestoneRepositoryMySql implements MilestoneRepositoryInterface
         // TODO: Implement findAll() method.
     }
 
-    public function find(Id $milestoneId): Milestone
+    public function find(Id $milestoneId): ?Milestone
     {
         // TODO: Implement findById() method.
     }

@@ -11,5 +11,5 @@ interface MilestoneRepositoryInterface
 
     public function findAll(): array;
 
-    public function find(Id $milestoneId): Milestone;
+    public function find(Id $milestoneId): ?Milestone;
 }

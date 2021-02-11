@@ -9,24 +9,36 @@ use App\Domain\MilestoneRepositoryInterface;
 
 class MilestoneRepositoryInMemory implements MilestoneRepositoryInterface
 {
+    private array $milestones = [];
+
+    public function __construct(array $milestones)
+    {
+        $this->milestones = $milestones;
+    }
 
     public function persist(Milestone $milestone): void
     {
-
+        $this->milestones[$milestone->getId()->id()] = clone $milestone;
     }
 
     public function remove(Milestone $milestone): void
     {
-        // TODO: Implement remove() method.
+        unset($milestone[$milestone->getId()->id()], $this->milestones);
     }
 
     public function findAll(): array
     {
-        // TODO: Implement findAll() method.
+        return array_map(function (Milestone $milestone) {
+            return clone $milestone;
+        }, $this->milestones);
     }
 
-    public function find(Id $milestoneId): Milestone
+    public function find(Id $milestoneId): ?Milestone
     {
-        // TODO: Implement findById() method.
+        if (!array_key_exists($milestoneId->id(), $this->milestones)) {
+            return null;
+        }
+
+        return clone $this->milestones[$milestoneId->id()];
     }
 }
