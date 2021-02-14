@@ -5,14 +5,15 @@ namespace App\Application;
 
 use App\Domain\Height;
 use App\Domain\Milestone;
+use App\Domain\MilestoneRepositoryInterface;
 use App\Infrastructure\Persistence\MilestoneRepositoryMySql;
 
 
 class SaveNewMilestone
 {
-    private MilestoneRepositoryMySql $milestoneRepository;
+    private MilestoneRepositoryInterface $milestoneRepository;
 
-    public function __construct(MilestoneRepositoryMySql $milestoneRepository)
+    public function __construct(MilestoneRepositoryInterface $milestoneRepository)
     {
         $this->milestoneRepository = $milestoneRepository;
     }
