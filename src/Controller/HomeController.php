@@ -20,9 +20,6 @@ class HomeController extends AbstractController
      */
     public function __invoke(Request $request): array
     {
-        $milestoneListService = new ListingMilestones();
-
-        // now the form is fixed because I remove the default class in the form type
         $milestoneForm = $this->createForm(MilestoneType::class);
 
         $milestoneForm->handleRequest($request);
@@ -30,13 +27,11 @@ class HomeController extends AbstractController
         if ($milestoneForm->isSubmitted() && $milestoneForm->isValid()) {
             $data = $milestoneForm->getData();
 
-
             $this->redirectToRoute('new-milestone', $data);
         }
 
         return [
             'message' => '',
-            'milestones' => $milestoneListService->getAllMilestones(),
             'milestoneForm' => $milestoneForm->createView()
         ];
     }
