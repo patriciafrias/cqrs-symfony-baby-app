@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Persistence;
 
-use App\Domain\Id;
 use App\Domain\Milestone;
 use App\Domain\MilestoneRepositoryInterface;
 use Doctrine\ORM\EntityManager;
@@ -36,11 +35,6 @@ final class MilestoneRepositoryMySql implements MilestoneRepositoryInterface
 
     public function findAll(): array
     {
-        // TODO: Implement findAll() method.
-    }
-
-    public function find(Id $milestoneId): ?Milestone
-    {
-        // TODO: Implement findById() method.
+        return $this->entityManager->getRepository(Milestone::class)->findAll();
     }
 }

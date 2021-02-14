@@ -10,6 +10,4 @@ interface MilestoneRepositoryInterface
     public function remove(Milestone $milestone): void;
 
     public function findAll(): array;
-
-    public function find(Id $milestoneId): ?Milestone;
 }

@@ -3,26 +3,23 @@ declare(strict_types=1);
 
 namespace App\Application;
 
-use App\Domain\Height;
 use App\Domain\Milestone;
-use App\Infrastructure\Persistence\MilestoneRepositoryInMemory;
+use App\Infrastructure\Persistence\MilestoneRepositoryMySql;
 
 class ListingMilestones
 {
+    private MilestoneRepositoryMySql $milestoneRepository;
+
+    public function __construct(MilestoneRepositoryMySql $milestoneRepository)
+    {
+        $this->milestoneRepository = $milestoneRepository;
+    }
+
     /**
      * @return Milestone[]|null
      */
     public function getAllMilestones(): ?array
     {
-        $milestoneRepository = new MilestoneRepositoryInMemory([
-            new Milestone(
-                Height::create(51)
-            ),
-            new Milestone(
-                Height::create(53)
-            )
-        ]);
-
-        return $milestoneRepository->findAll();
+        return $this->milestoneRepository->findAll();
     }
 }

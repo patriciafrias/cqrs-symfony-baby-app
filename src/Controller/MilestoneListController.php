@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Application\ListingMilestones;
+use App\Infrastructure\Persistence\MilestoneRepositoryMySql;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,9 +17,9 @@ class MilestoneListController extends AbstractController
      *
      * @Template("milestone/list.html.twig")
      */
-    public function __invoke(): array
+    public function __invoke(MilestoneRepositoryMySql $milestoneRepositoryMySql): array
     {
-        $milestoneListService = new ListingMilestones();
+        $milestoneListService = new ListingMilestones($milestoneRepositoryMySql);
 
         return [
             'milestones' => $milestoneListService->getAllMilestones(),

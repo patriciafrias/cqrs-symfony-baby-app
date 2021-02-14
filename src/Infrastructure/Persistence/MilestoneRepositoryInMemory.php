@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Persistence;
 
-use App\Domain\Id;
 use App\Domain\Milestone;
 use App\Domain\MilestoneRepositoryInterface;
 
@@ -31,14 +30,5 @@ class MilestoneRepositoryInMemory implements MilestoneRepositoryInterface
         return array_map(function (Milestone $milestone) {
             return clone $milestone;
         }, $this->milestones);
-    }
-
-    public function find(Id $milestoneId): ?Milestone
-    {
-        if (!array_key_exists($milestoneId->id(), $this->milestones)) {
-            return null;
-        }
-
-        return clone $this->milestones[$milestoneId->id()];
     }
 }
