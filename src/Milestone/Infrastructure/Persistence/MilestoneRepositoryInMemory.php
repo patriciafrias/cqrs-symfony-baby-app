@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Infrastructure\Persistence;
+namespace App\Milestone\Infrastructure\Persistence;
 
-use App\Domain\Milestone;
-use App\Domain\MilestoneRepositoryInterface;
+use App\Milestone\Domain\Milestone;
+use App\Milestone\Domain\MilestoneRepositoryInterface;
 
 class MilestoneRepositoryInMemory implements MilestoneRepositoryInterface
 {

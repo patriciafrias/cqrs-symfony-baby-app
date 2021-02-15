@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Milestone\Infrastructure\Controller;
 
-use App\Application\ListingMilestones;
-use App\Infrastructure\Persistence\MilestoneRepositoryMySql;
+use App\Milestone\Application\ListingMilestones;
+use App\Milestone\Infrastructure\Persistence\MilestoneRepositoryMySql;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class MilestoneListController extends AbstractController
 {

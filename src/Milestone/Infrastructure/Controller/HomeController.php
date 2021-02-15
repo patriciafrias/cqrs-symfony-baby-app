@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Milestone\Infrastructure\Controller;
 
-use App\Application\SaveNewMilestone;
-use App\Form\MilestoneType;
-use App\Infrastructure\Persistence\MilestoneRepositoryMySql;
+use App\Milestone\Application\SaveNewMilestone;
+use App\Milestone\Infrastructure\Form\MilestoneType;
+use App\Milestone\Infrastructure\Persistence\MilestoneRepositoryMySql;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;

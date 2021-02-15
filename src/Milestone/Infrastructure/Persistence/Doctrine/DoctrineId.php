@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Infrastructure\Persistence\Doctrine;
+namespace App\Milestone\Infrastructure\Persistence\Doctrine;
 
-use App\Domain\Id;
+use App\Milestone\Domain\Id;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\GuidType;
 

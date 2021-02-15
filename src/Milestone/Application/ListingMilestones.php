@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Application;
+namespace App\Milestone\Application;
 
-use App\Domain\Milestone;
-use App\Domain\MilestoneRepositoryInterface;
+use App\Milestone\Domain\Milestone;
+use App\Milestone\Domain\MilestoneRepositoryInterface;
 
 class ListingMilestones
 {

@@ -1,9 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Milestone\Infrastructure\Controller;
 
-use App\Application\SaveNewMilestone;
+use App\Milestone\Application\SaveNewMilestone;
+use App\Milestone\Infrastructure\Persistence\MilestoneRepositoryMySql;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,9 +17,9 @@ class NewMilestoneController extends AbstractController
      * @Route("/new-milestone", methods={"GET", "POST"}, name="new-milestone")
      * @Template("home.html.twig")
      */
-    public function __invoke(Request $request): array
+    public function __invoke(MilestoneRepositoryMySql $milestoneRepositoryMySql, Request $request): array
     {
-        $saveNewMilestoneService = new SaveNewMilestone();
+        $saveNewMilestoneService = new SaveNewMilestone($milestoneRepositoryMySql);
 
         $saveNewMilestoneService->saveMilestone([
             'height' => $request->get('height')

@@ -1,12 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Tests\Unit;
+namespace App\Tests\Unit\Milestone;
 
-use App\Domain\Height;
-use App\Domain\Milestone;
-use App\Domain\MilestoneRepositoryInterface;
-use App\Infrastructure\Persistence\MilestoneRepositoryInMemory;
+use App\Milestone\Domain\Height;
+use App\Milestone\Domain\Milestone;
+use App\Milestone\Infrastructure\Persistence\MilestoneRepositoryInMemory;
 use PHPUnit\Framework\TestCase;
 
 class MilestoneSaveNewTest extends TestCase
