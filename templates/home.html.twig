@@ -6,7 +6,11 @@
         {{ render_esi(path('milestone_list')) }}
     </div>
 
-    {{ message }}
+    {% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
 
     {{ form(milestoneForm) }}
 

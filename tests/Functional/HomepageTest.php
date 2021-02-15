@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace App\Tests\Functional;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-// https://blog.cleancoder.com/uncle-bob/2017/10/03/TestContravariance.html
+
 class HomepageTest extends WebTestCase
 {
     /**
@@ -19,7 +19,7 @@ class HomepageTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
         $content = $client->getResponse()->getContent();
-        $this->assertStringContainsString('51cm', $content);
-        $this->assertStringContainsString('53cm', $content);
+        $this->assertStringContainsString('Save', $content);
+        $this->assertStringContainsString('cm', $content);
     }
 }

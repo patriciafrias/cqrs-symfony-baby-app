@@ -30,6 +30,8 @@ class HomeController extends AbstractController
             $saveMilestoneService = new SaveNewMilestone($milestoneRepositoryMySql);
 
             $saveMilestoneService->saveMilestone($data);
+
+            $this->addFlash('notice', 'New Milestone Added!');
         }
 
         return [

@@ -5,7 +5,6 @@ namespace App\Application;
 
 use App\Domain\Milestone;
 use App\Domain\MilestoneRepositoryInterface;
-use App\Infrastructure\Persistence\MilestoneRepositoryMySql;
 
 class ListingMilestones
 {

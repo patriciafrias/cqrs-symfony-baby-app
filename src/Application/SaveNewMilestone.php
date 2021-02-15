@@ -6,8 +6,6 @@ namespace App\Application;
 use App\Domain\Height;
 use App\Domain\Milestone;
 use App\Domain\MilestoneRepositoryInterface;
-use App\Infrastructure\Persistence\MilestoneRepositoryMySql;
-
 
 class SaveNewMilestone
 {
