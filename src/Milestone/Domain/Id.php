@@ -25,7 +25,7 @@ final class Id
 
     public static function create(string $id = null): self
     {
-        return new Id($id);
+        return new self($id);
     }
 
     public function id(): string

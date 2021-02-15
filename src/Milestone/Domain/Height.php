@@ -24,7 +24,7 @@ final class Height
 
     public static function create(float $value): self
     {
-        return new Height($value);
+        return new self($value);
     }
 
     public function __toString(): string
