@@ -9,6 +9,7 @@ final class Height
 
     protected function __construct(float $value)
     {
+        //todo: the validation can be moved to a guard method.
         if (($value < 50) || ($value > 100)) {
             throw new \InvalidArgumentException('Enter a valid baby height in cm');
         }
