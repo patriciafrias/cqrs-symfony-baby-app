@@ -6,7 +6,7 @@ namespace App\Milestone\Infrastructure\Persistence;
 use App\Milestone\Domain\Milestone;
 use App\Milestone\Domain\MilestoneRepositoryInterface;
 
-class MilestoneRepositoryInMemory implements MilestoneRepositoryInterface
+final class MilestoneRepositoryInMemory implements MilestoneRepositoryInterface
 {
     private array $milestones;
 

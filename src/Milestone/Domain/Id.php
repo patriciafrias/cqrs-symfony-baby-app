@@ -6,7 +6,7 @@ namespace App\Milestone\Domain;
 use Ramsey\Uuid\Exception\InvalidUuidStringException;
 use Ramsey\Uuid\Uuid;
 
-class Id
+final class Id
 {
     protected string $id;
 
@@ -25,7 +25,7 @@ class Id
 
     public static function create(string $id = null): self
     {
-        return new static($id);
+        return new Id($id);
     }
 
     public function id(): string
