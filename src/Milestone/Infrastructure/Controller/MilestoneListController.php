@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Milestone\Infrastructure\Controller;
 
-use App\Milestone\Application\ListingMilestones;
+use App\Milestone\Application\ListingMilestonesService;
 use App\Milestone\Infrastructure\Persistence\MilestoneRepositoryMySql;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,7 +19,7 @@ class MilestoneListController extends AbstractController
      */
     public function __invoke(MilestoneRepositoryMySql $milestoneRepositoryMySql): array
     {
-        $milestoneListService = new ListingMilestones($milestoneRepositoryMySql);
+        $milestoneListService = new ListingMilestonesService($milestoneRepositoryMySql);
 
         return [
             'milestones' => $milestoneListService->getAllMilestones(),

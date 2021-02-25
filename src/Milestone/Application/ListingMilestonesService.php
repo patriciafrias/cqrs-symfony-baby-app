@@ -6,7 +6,7 @@ namespace App\Milestone\Application;
 use App\Milestone\Domain\Milestone;
 use App\Milestone\Domain\MilestoneRepositoryInterface;
 
-class ListingMilestones
+class ListingMilestonesService
 {
     private MilestoneRepositoryInterface $milestoneRepository;
 
