@@ -37,14 +37,10 @@ services:
     # Service aliases - interface implementations
     App\Milestone\Domain\MilestoneRepositoryInterface: '@App\Milestone\Infrastructure\Persistence\MilestoneRepositoryMySql'
 
-#    App\Milestone\Application\SaveNewMilestoneService:
-#        autowire: true
-#        arguments: ['']
-
     _instanceof:
         App\Milestone\Domain\Bus\Command\CommandHandler:
             tags:
                 - { name: messenger.message_handler, bus: command.bus }
-#        App\Milestone\Domain\Bus\Query\QueryHandler:
-#            tags:
-#                - { name: messenger.message_handler, bus: query.bus }
+        App\Milestone\Domain\Bus\Query\QueryHandler:
+            tags:
+                - { name: messenger.message_handler, bus: query.bus }
