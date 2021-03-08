@@ -16,7 +16,7 @@ class ListingMilestonesService
     }
 
     /**
-     * @return Milestone[]|null
+     * @return null|Milestone[]
      */
     public function getAllMilestones(): ?array
     {

@@ -34,8 +34,16 @@ services:
         autowire: true
         arguments: ['@doctrine.orm.entity_manager']
 
-    # Service aliases - interface implementations
+    App\Milestone\Infrastructure\Messaging\CommandBusSymfony:
+        arguments: ['@command.bus']
+
+    App\Milestone\Infrastructure\Messaging\QueryBusSymfony:
+        arguments: ['@query.bus']
+
+    # Aliases - implementations (Adapters)
     App\Milestone\Domain\MilestoneRepositoryInterface: '@App\Milestone\Infrastructure\Persistence\MilestoneRepositoryMySql'
+    App\Milestone\Domain\Bus\Command\Command\CommandBus: '@App\Milestone\Infrastructure\Messaging\CommandBusSymfony'
+    App\Milestone\Domain\Bus\Command\Command\QueryBus: '@App\Milestone\Infrastructure\Messaging\QueryBusSymfony'
 
     _instanceof:
         App\Milestone\Domain\Bus\Command\CommandHandler:
