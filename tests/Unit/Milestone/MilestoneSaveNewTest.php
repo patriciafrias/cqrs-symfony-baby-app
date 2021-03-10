@@ -26,7 +26,6 @@ class MilestoneSaveNewTest extends TestCase
 
     /**
      * @test
-     * @todo move to value object - only Height
      */
     public function milestoneSaveNew_withWrongInput_shouldThrowAnException()
     {
