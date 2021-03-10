@@ -3,7 +3,7 @@
 This project can be used as a skeleton if you need a basic setup to work with the Ports & Adapters architecture + CQRS + symfony + docker setup (php7.4, MysQL, Apache)
 
 ## Relevant packages included:
-- [Symfony Messenger component](https://packagist.org/packages/symfony/messenger){:target="_blank"}
+- [Symfony Messenger component](https://packagist.org/packages/symfony/messenger)
 - [PHPUnit](https://packagist.org/packages/phpunit/phpunit)
 - [Ramsey/Uuid](https://packagist.org/packages/ramsey/uuid)
 
@@ -28,4 +28,4 @@ Thanks to a simple docker setup included you can run this project in local:
   composer install
   ```
 
-- Go to localhost on the browser to see how it works
+- Go to localhost on the browser to see how it works.
