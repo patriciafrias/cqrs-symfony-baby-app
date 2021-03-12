@@ -40,10 +40,14 @@ services:
     App\Milestone\Infrastructure\Messaging\QueryBusSymfony:
         arguments: ['@query.bus']
 
-    # Aliases - implementations (Adapters)
+    App\Milestone\Infrastructure\Messaging\EventBusSymfony:
+        arguments: ['@event.bus']
+
+    # Aliases - implementations
     App\Milestone\Domain\MilestoneRepositoryInterface: '@App\Milestone\Infrastructure\Persistence\MilestoneRepositoryMySql'
-    App\Milestone\Domain\Bus\Command\Command\CommandBus: '@App\Milestone\Infrastructure\Messaging\CommandBusSymfony'
-    App\Milestone\Domain\Bus\Command\Command\QueryBus: '@App\Milestone\Infrastructure\Messaging\QueryBusSymfony'
+#    App\Milestone\Domain\Bus\Command\CommandBus: '@App\Milestone\Infrastructure\Messaging\CommandBusSymfony'
+#    App\Milestone\Domain\Bus\Query\QueryBus: '@App\Milestone\Infrastructure\Messaging\QueryBusSymfony'
+#    App\Milestone\Domain\Bus\Event\QueryBus: '@App\Milestone\Infrastructure\Messaging\EventBusSymfony'
 
     _instanceof:
         App\Milestone\Domain\Bus\Command\CommandHandler:
@@ -52,3 +56,6 @@ services:
         App\Milestone\Domain\Bus\Query\QueryHandler:
             tags:
                 - { name: messenger.message_handler, bus: query.bus }
+        App\Milestone\Domain\Bus\Event\EventHandler:
+            tags:
+                - { name: messenger.message_handler, bus: event.bus }

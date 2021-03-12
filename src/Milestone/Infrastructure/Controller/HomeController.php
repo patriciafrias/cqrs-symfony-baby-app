@@ -39,8 +39,6 @@ class HomeController extends AbstractController
             $command = new SaveNewMilestoneCommand($height);
 
             $this->commandBus->dispatch($command);
-
-            $this->addFlash('notice', 'New Milestone Added!');
         }
 
         return [
