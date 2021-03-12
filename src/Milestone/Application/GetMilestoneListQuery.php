@@ -5,6 +5,6 @@ namespace App\Milestone\Application;
 
 use App\Milestone\Domain\Bus\Query\Query;
 
-class GetMilestoneListQuery implements Query
+final class GetMilestoneListQuery implements Query
 {
 }

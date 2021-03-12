@@ -5,7 +5,7 @@ namespace App\Milestone\Application;
 
 use App\Milestone\Domain\Bus\Query\QueryHandler;
 
-class GetMilestoneListQueryHandler implements QueryHandler
+final class GetMilestoneListQueryHandler implements QueryHandler
 {
     private ListingMilestonesService $listingMilestoneService;
 
