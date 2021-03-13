@@ -45,9 +45,6 @@ services:
 
     # Aliases - implementations
     App\Milestone\Domain\MilestoneRepositoryInterface: '@App\Milestone\Infrastructure\Persistence\MilestoneRepositoryMySql'
-#    App\Milestone\Domain\Bus\Command\CommandBus: '@App\Milestone\Infrastructure\Messaging\CommandBusSymfony'
-#    App\Milestone\Domain\Bus\Query\QueryBus: '@App\Milestone\Infrastructure\Messaging\QueryBusSymfony'
-#    App\Milestone\Domain\Bus\Event\QueryBus: '@App\Milestone\Infrastructure\Messaging\EventBusSymfony'
 
     _instanceof:
         App\Milestone\Domain\Bus\Command\CommandHandler:
