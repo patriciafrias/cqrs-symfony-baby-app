@@ -1,6 +1,6 @@
 # CQRS in a simple app implemenging Ports & Adapters architecture
 
-This project can be used as a skeleton if you need a basic setup to work with the Ports & Adapters architecture + CQRS + symfony + docker setup (php7.4, MysQL, Apache)
+This project can be used as a skeleton if you need a basic setup to work with the Ports & Adapters architectural pattern + CQRS + symfony + docker setup (php7.4, MysQL, Apache)
 
 ## Relevant packages included:
 - [Symfony Messenger component](https://packagist.org/packages/symfony/messenger)
